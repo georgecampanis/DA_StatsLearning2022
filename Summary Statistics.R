@@ -5,9 +5,10 @@
 # Hadley Wickham R for Data Science
 # https://statsandr.com/blog/descriptive-statistics-in-r/
 # https://statsandr.com/blog/data-types-in-r/
+# https://www.statmethods.net/input/datatypes.html (data types in R)
 #
 # Author: George Campanis
-# Date: 25-Jan-2021
+# Date: 30-Jan-2022
 # Purpose: Teaching Summary Stats to DA Group 
 ###################################################################
 
