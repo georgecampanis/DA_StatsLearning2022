@@ -81,4 +81,26 @@ ggplot(data = weather, mapping = aes(x = temp)) +
   geom_histogram(bins = 50, binwidth = 5, color = "white") +
   facet_wrap(~month) # display facets by month
 #####################################################################
+# How would we Automate creating plots?
+
+airport_list <- unique(weather$origin)
+
+
+for (i in airport_list ) {
+  airport_dta <-  weather %>% 
+    filter(origin == i)
+  
+  ggplot(data = airport_dta, mapping = aes(x = temp)) +
+    geom_histogram(bins = 50, binwidth = 5, color = "white") +
+    facet_wrap(~month) + # display facets by month
+    labs(x = "Temp (F) ", y = "Frequency",
+         title = paste(i,": Histogram of Temperature By NY Airport and Month"),
+         caption = "Source: NYCFlight13")
+  
+  ggsave(path="C:/images/",filename=paste(i,"_hi_res.png"), dpi=350)
+  ggsave(path="C:/images/",filename=paste(i,"_low_res.png"), dpi=72)
+  
+}
+
+
 
